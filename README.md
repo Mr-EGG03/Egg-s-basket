@@ -1,1 +1,3 @@
-# Egg-s-basket
+# Egg's basket
+
+Portfolio website (work in progress).
