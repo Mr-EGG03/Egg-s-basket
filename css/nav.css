@@ -1,0 +1,89 @@
+/* nav.css: the header with the logo and the folder-tab page links */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 24px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: var(--title-font);
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 14px 0;
+  white-space: nowrap;
+}
+
+nav ul {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* each link looks like the tab of a paper folder */
+nav a {
+  display: block;
+  min-width: 96px;
+  padding: 10px 16px 8px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  text-decoration: none;
+  background: white;
+  white-space: nowrap;
+  transition: padding-top 0.2s ease;
+}
+
+nav a:hover {
+  padding-top: 4px;
+  color: var(--ink);
+}
+
+nav .home a:hover,
+nav .home a[aria-current="page"] {
+  background: var(--home-colour);
+}
+nav .about a:hover,
+nav .about a[aria-current="page"] {
+  background: var(--about-colour);
+}
+nav .code a:hover,
+nav .code a[aria-current="page"] {
+  background: var(--code-colour);
+}
+nav .gallery a:hover,
+nav .gallery a[aria-current="page"] {
+  background: var(--gallery-colour);
+}
+
+/* the current page's tab sits a little taller */
+nav a[aria-current="page"] {
+  padding-top: 16px;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 0 12px;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  nav a {
+    min-width: 0;
+    padding: 8px 8px 6px;
+    font-size: 0.85rem;
+  }
+  nav a[aria-current="page"] {
+    padding-top: 12px;
+  }
+}

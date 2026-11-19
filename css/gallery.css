@@ -1,0 +1,11 @@
+/* gallery.css: tag filter buttons */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.filters .btn[aria-pressed="true"] {
+  background: var(--gallery-colour);
+}

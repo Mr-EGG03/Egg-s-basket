@@ -1,0 +1,106 @@
+/* base.css: fonts, colours and plain text styles used on every page */
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Sansation:wght@300;400;700&display=swap");
+
+:root {
+  --title-font: "Electrolize", sans-serif;
+  --text-font: "Sansation", sans-serif;
+
+  --ink: #2c2a31;
+  --ink-soft: #6b6870;
+  --paper: #fbfaf7;
+  --line: #2c2a31;
+
+  /* one colour per page tab */
+  --home-colour: #f8e88e;
+  --about-colour: #88b3d7;
+  --code-colour: #f2a98c;
+  --gallery-colour: #abe275;
+
+  --accent: #ffbe46; /* hover / highlight colour */
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--text-font);
+  color: var(--ink);
+  background-color: var(--paper);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--title-font);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--ink);
+}
+
+a:hover {
+  color: var(--ink-soft);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 24px 60px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.page-intro {
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+.page-intro h2 {
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: white;
+  font: inherit;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

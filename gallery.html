@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | EGG carton</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="./index.html">[EGG carton]</a>
+      <nav aria-label="Pages">
+        <ul>
+          <li class="home"><a href="./index.html">Home</a></li>
+          <li class="about"><a href="./about.html">About</a></li>
+          <li class="code"><a href="./codescape.html">Code scape</a></li>
+          <li class="gallery"><a href="./gallery.html" aria-current="page">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="page-intro">
+        <h2>Gallery</h2>
+        <p>Every project in the carton. Use the tags to filter.</p>
+      </section>
+
+      <!-- filled by js/gallery.js: one button per tag used in content/projects.js -->
+      <div class="filters" id="filters" role="group" aria-label="Filter by tag"></div>
+
+      <div class="card-grid" id="gallery-grid"></div>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 EGG carton &middot; Interaction design portfolio</span>
+      <a href="mailto:geldeneg@gmail.com">Email</a>
+    </footer>
+    <script src="content/projects.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/gallery.js"></script>
+  </body>
+</html>

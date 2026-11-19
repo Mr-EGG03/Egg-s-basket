@@ -1,0 +1,158 @@
+/* about.css: about section, contact, the break-through wall and the hobby section */
+.about-me {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.about-me h2 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.contact {
+  margin: 48px 0 0;
+  padding: 16px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--about-colour);
+}
+
+.contact h3 {
+  margin: 0 0 8px;
+}
+
+.contact ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* the wall: --crack goes from 0 to 1 as you push against it */
+.barrier {
+  margin: 30vh 0 20vh;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid var(--line);
+  cursor: pointer;
+  transform: translateY(calc(var(--crack, 0) * 18px));
+}
+
+.barrier.shake {
+  animation: shake 0.15s;
+}
+
+@keyframes shake {
+  25% {
+    translate: -3px 0;
+  }
+  75% {
+    translate: 3px 0;
+  }
+}
+
+.crack {
+  width: 260px;
+  height: 80px;
+  margin-top: -2px;
+}
+
+.crack path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--crack, 0));
+}
+
+.barrier-label {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.barrier.broken {
+  display: none;
+}
+
+.hobby {
+  padding-top: 40px;
+  animation: rise 0.6s ease-out;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+/* before & after slider */
+.before-after {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+  margin: 32px 0 48px;
+}
+
+.ba-frame {
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  aspect-ratio: 7 / 8;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.ba-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-after {
+  position: absolute;
+  inset: 0;
+}
+
+.ba-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .about-me,
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+  .portrait {
+    max-width: 280px;
+  }
+}

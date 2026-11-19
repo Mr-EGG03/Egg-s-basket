@@ -1,0 +1,120 @@
+/* cards.css: project cards and the pop-up viewer (lightbox), shared by several pages */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  background: white;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-body {
+  padding: 12px 14px 14px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  font-size: 0.8rem;
+  padding: 1px 8px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+/* lightbox: the pop-up that shows a whole project */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(44, 42, 49, 0.7);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-panel {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.lightbox-text h2 {
+  margin-top: 0;
+}
+
+.lightbox-text p {
+  white-space: pre-line; /* keeps the line breaks you type in projects.js */
+}
+
+.lightbox-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 760px) {
+  .lightbox-panel {
+    grid-template-columns: 1fr;
+  }
+}

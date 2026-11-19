@@ -1,0 +1,39 @@
+/* codescape.css: code project cards and the player that runs them */
+.code-card .btn {
+  margin-top: 10px;
+}
+
+.player {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  flex-direction: column;
+  background: var(--paper);
+}
+
+.player.open {
+  display: flex;
+}
+
+.player-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--code-colour);
+}
+
+.player-bar h2 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.player iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: white;
+}

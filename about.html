@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | EGG carton</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="./index.html">[EGG carton]</a>
+      <nav aria-label="Pages">
+        <ul>
+          <li class="home"><a href="./index.html">Home</a></li>
+          <li class="about"><a href="./about.html" aria-current="page">About</a></li>
+          <li class="code"><a href="./codescape.html">Code scape</a></li>
+          <li class="gallery"><a href="./gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="about-me">
+        <!-- add a photo of yourself: images/me.jpg -->
+        <img class="portrait" src="images/projects/example/cover.svg" alt="Portrait" />
+        <div>
+          <h2>About</h2>
+          <p>
+            I'm Ethan, a second-year interaction design student. Write a few
+            lines here about what you design, how you work, and what you're
+            looking for next.
+          </p>
+          <a class="btn" href="cv/CV.pdf" download>Download CV</a>
+        </div>
+      </section>
+
+      <section class="contact" aria-label="Contact">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:geldeneg@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/ethan-geldenhuys-aaa3a425a/">LinkedIn</a></li>
+          <!-- add your project Instagram link here -->
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </section>
+
+      <!-- the wall: keep scrolling (or click it) to break through to the hobby section -->
+      <div class="barrier" id="barrier" role="button" tabindex="0" aria-controls="hobby" aria-expanded="false">
+        <svg class="crack" viewBox="0 0 400 120" aria-hidden="true">
+          <path pathLength="1" d="M200 0 L190 30 L215 55 L195 80 L205 120" />
+          <path pathLength="1" d="M190 30 L150 45 L120 40" />
+          <path pathLength="1" d="M215 55 L260 60 L290 85" />
+          <path pathLength="1" d="M195 80 L160 95 L140 120" />
+        </svg>
+        <p class="barrier-label">Keep scrolling to break through</p>
+      </div>
+
+      <section class="hobby" id="hobby" hidden>
+        <h2>Off the clock</h2>
+        <p>Scale models and miniatures: where I learned to make things with my hands.</p>
+
+        <!-- before & after slider: set the photos at the bottom of content/projects.js -->
+        <div class="before-after">
+          <div class="ba-frame" id="ba-frame" tabindex="0" aria-label="Before and after comparison. Use the arrow keys to move the line.">
+            <img id="ba-before" alt="Before" />
+            <div class="ba-after" id="ba-after"><img id="ba-after-img" alt="After" /></div>
+            <div class="ba-line" id="ba-line"></div>
+          </div>
+          <div>
+            <h3 id="ba-title"></h3>
+            <p id="ba-text"></p>
+          </div>
+        </div>
+
+        <!-- filled by js/about.js with projects marked  hobby: true -->
+        <div class="card-grid" id="hobby-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 EGG carton &middot; Interaction design portfolio</span>
+      <a href="mailto:geldeneg@gmail.com">Email</a>
+    </footer>
+    <script src="content/projects.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/before-after.js"></script>
+    <script src="js/breakthrough.js"></script>
+    <script src="js/about.js"></script>
+  </body>
+</html>

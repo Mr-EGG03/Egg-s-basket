@@ -1,0 +1,17 @@
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  background: #f8e88e;
+}
+#egg {
+  font-size: 6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#egg:active {
+  transform: scale(0.9);
+}

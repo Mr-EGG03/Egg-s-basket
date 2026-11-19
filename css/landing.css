@@ -1,0 +1,45 @@
+/* landing.css: the intro graphic on the home page */
+
+/* the header fades in as the logo shrinks into it (--p goes 0 to 1 while scrolling) */
+.landing header {
+  background: rgba(251, 250, 247, var(--p, 1));
+  border-bottom-color: rgba(44, 42, 49, var(--p, 1));
+}
+
+.landing .logo {
+  transform-origin: top left;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 12vh;
+  background: var(--home-colour);
+  opacity: calc(1 - var(--p, 0));
+}
+
+.hero-tagline {
+  font-family: var(--title-font);
+  font-size: 1.4rem;
+  margin: 0 0 24px;
+}
+
+.hero-hint {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  animation: nudge 1.6s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.landing main {
+  padding-top: 60px;
+  min-height: 100vh; /* always leaves room to scroll the logo all the way in */
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EGG carton</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+  </head>
+  <body class="landing">
+    <header>
+      <a class="logo" href="./index.html">[EGG carton]</a>
+      <nav aria-label="Pages">
+        <ul>
+          <li class="home"><a href="./index.html" aria-current="page">Home</a></li>
+          <li class="about"><a href="./about.html">About</a></li>
+          <li class="code"><a href="./codescape.html">Code scape</a></li>
+          <li class="gallery"><a href="./gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- intro graphic: the logo starts big in the middle and shrinks into the header as you scroll -->
+    <section class="hero" aria-label="Introduction">
+      <p class="hero-tagline">Interaction design portfolio</p>
+      <p class="hero-hint">Scroll</p>
+    </section>
+
+    <main>
+      <section class="page-intro">
+        <h2>Highlighted projects</h2>
+        <p>
+          A few favourites from the carton. Find everything else in the
+          <a href="./gallery.html">gallery</a>.
+        </p>
+      </section>
+
+      <!-- filled by js/landing.js with projects marked  featured: true -->
+      <div class="card-grid" id="featured"></div>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 EGG carton &middot; Interaction design portfolio</span>
+      <a href="mailto:geldeneg@gmail.com">Email</a>
+    </footer>
+    <script src="content/projects.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/landing.js"></script>
+  </body>
+</html>
